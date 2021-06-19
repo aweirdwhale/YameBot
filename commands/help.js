@@ -12,12 +12,12 @@ module.exports ={
       
         .setColor(12745742)
         .setDescription(emojis.unicode(`__**Fun:**__
-        **récupérer la pp d'un membre**: *pp '@mention' <gif|png>* \n
+        **récupérer la pp d'un membre**: *pp '@mention' <gif | png>* \n
         **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n
         __**Modération:**__
         **kick**: *kick '@mention' <raison>*
         **ban** : *ban '@mention' <raison>*
-        **clear** : *clear 'nombre entre 0 et 64* \n
+        **clear** : *clear 'nombre entre 0 et 64'* \n
         **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n
         __**Médias:**__
         **play**: *play 'lien youtube'*

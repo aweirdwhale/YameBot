@@ -9,8 +9,10 @@
   "author": "LiquorLips",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "^0.5.3",
     "discord.js": "^12.5.3",
     "emojis": "^1.0.10",
+    "ffmpeg-static": "^4.4.0",
     "fs": "0.0.1-security",
     "google-translate-api": "^2.3.0",
     "iss": "0.0.2",
