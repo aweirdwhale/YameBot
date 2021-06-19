@@ -11,8 +11,11 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "emojis": "^1.0.10",
+    "fs": "0.0.1-security",
     "google-translate-api": "^2.3.0",
     "iss": "0.0.2",
-    "tronalddump-io": "^1.0.1"
+    "tronalddump-io": "^1.0.1",
+    "yt-search": "^2.8.0",
+    "ytdl-core": "^4.8.2"
   }
 }

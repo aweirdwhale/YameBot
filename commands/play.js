@@ -1,4 +1,4 @@
-const { blue, green, yellow, red } = require(`./colors.json`)
+/*const { blue, green, yellow, red } = require(`./colors.json`)
 const { MessageEmbed } = require('discord.js');
 const ytdl = require("ytdl-core");
 const ytSearch = require('yt-search');
@@ -249,4 +249,4 @@ const queue_list = (message) => {
         .setDescription(`${msgSend}`)
     message.channel.send(embed);
     
-}
+}*/
