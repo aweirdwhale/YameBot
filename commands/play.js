@@ -20,7 +20,7 @@ module.exports = {
         const embedSend = new MessageEmbed()
                     .setTitle(`Recherche`)
                     .setColor(`${yellow}`)
-                    .setDescription(`:arrows_counterclockwise: Recherche de la vidéo`)
+                    .setDescription(`Recherche de la vidéo...`)
                     
 
         const voice_channel = message.member.voice.channel;
@@ -36,7 +36,7 @@ module.exports = {
                 const embed = new MessageEmbed(receivedEmbed)
                     .setTitle(`Erreur`)
                     .setColor(`${red}`)
-                    .setDescription(`:x: Veuillez entrer un lien youtube`)
+                    .setDescription(`Veuillez entrer un lien youtube ou un nom!`)
                 return message.channel.send(embed); 
             }
 
@@ -44,7 +44,7 @@ module.exports = {
                 const embed = new MessageEmbed(receivedEmbed)
                     .setTitle(`Erreur`)
                     .setColor(`${red}`)
-                    .setDescription(`:x: Vous n'êtes pas dans un salon vocal`)
+                    .setDescription(`Vous n'êtes pas dans un salon vocal`)
                 return message.channel.send(embed);
             }
 
@@ -64,7 +64,7 @@ module.exports = {
                     .setTitle(`${song.title}`)
                     .setURL(`${song.url}`)
                     .setColor(`${yellow}`)
-                    .setDescription(`:arrows_counterclockwise: Chargement de la vidéo`)
+                    .setDescription(`Chargement de la vidéo...`)
                     .setThumbnail(`https://img.youtube.com/vi/${song.videoID}/maxresdefault.jpg`)
                 msgE.edit(embed);
                 
@@ -88,14 +88,14 @@ module.exports = {
                         .setTitle(`${song.title}`)
                         .setURL(`${song.url}`)
                         .setColor(`${yellow}`)
-                        .setDescription(`:arrows_counterclockwise: Chargement de la vidéo`)
+                        .setDescription(`Chargement de la vidéo....`)
                         .setThumbnail(`https://img.youtube.com/vi/${song.videoID}/maxresdefault.jpg`)
                         msgE.edit(embed);
                 } else {
                     const embed = new MessageEmbed(receivedEmbed)
                         .setTitle(`Erreur`)
                         .setColor(`${red}`)
-                        .setDescription(`:x: La vidéo est introuvable ou le lien est invalide`)
+                        .setDescription(`La vidéo est introuvable!`)
                     msgE.edit(embed);
                 }
             }
@@ -120,7 +120,7 @@ module.exports = {
                     const embed = new MessageEmbed(receivedEmbed)
                         .setTitle(`Erreur`)
                         .setColor(`${red}`)
-                        .setDescription(`:x: Le salon est inaccessible !`)
+                        .setDescription(`Salon inaccessible !`)
                     message.channel.send(embed);
                     throw err;
                 }
@@ -132,7 +132,7 @@ module.exports = {
                         .setTitle(`${song.title}`)
                         .setURL(`${song.url}`)
                         .setColor(`${green}`)
-                        .setDescription(`:white_check_mark: Vidéo ajouté a la liste !`)
+                        .setDescription(`Vidéo ajouté a la liste !`)
                         .setThumbnail(`https://img.youtube.com/vi/${song.videoID}/maxresdefault.jpg`)
                     msgE.edit(embed);
             }
@@ -177,22 +177,22 @@ const video_player = async (guild, song) => {
         .setTitle(`${song.title}`)
         .setURL(`${song.url}`)
         .setColor(`${green}`)
-        .setDescription(`:white_check_mark: Lecture de la vidéo`)
+        .setDescription(`Lecture de la vidéo!`)
         .setThumbnail(`https://img.youtube.com/vi/${song.videoID}/maxresdefault.jpg`)
     await msgE.edit(embed);
     }
 }
 
 const skip_song = (message, server_queue) => {
-    if (!message.member.voice.channel) return message.channel.send('You need to be in a channel to execute this command!');
+    if (!message.member.voice.channel) return message.channel.send('Tu dois être dans un salon vocal!');
     if(!server_queue){
-        return message.channel.send(`There are no songs in queue 😔`);
+        return message.channel.send(`Pas de son après...`);
     }
 
     const embed = new MessageEmbed()
         .setTitle(`Skip`)
         .setColor(`${blue}`)
-        .setDescription(`:white_check_mark: Vous avez sauté une musique`)
+        .setDescription(`Vous avez sauté la musique!`)
     message.channel.send(embed);
 
     server_queue.connection.dispatcher.end();
@@ -204,7 +204,7 @@ const stop_song = (message, server_queue) => {
         const embed = new MessageEmbed()
             .setTitle(`Erreur`)
             .setColor(`${red}`)
-            .setDescription(`:x: Vous devez etre dans un salon vocal !`)
+            .setDescription(`Vous devez etre dans un salon vocal !`)
         return message.channel.send(embed);
     }
     
@@ -212,7 +212,7 @@ const stop_song = (message, server_queue) => {
         const embed = new MessageEmbed()
             .setTitle(`Erreur`)
             .setColor(`${red}`)
-            .setDescription(`:x: Il n'y a pas de musique a arreter !`)
+            .setDescription(`Il n'y a pas de musique a arreter !`)
         return message.channel.send(embed);
     }
     
@@ -224,7 +224,7 @@ const stop_song = (message, server_queue) => {
         const embed = new MessageEmbed()
             .setTitle(`Erreur`)
             .setColor(`${red}`)
-            .setDescription(`:x: La musique n'a pas pu s'arreter`)
+            .setDescription(`La musique n'a pas pu s'arreter`)
             .setFooter(`${error}`)
         return message.channel.send(embed);
     }
@@ -234,7 +234,7 @@ const stop_song = (message, server_queue) => {
     const embed = new MessageEmbed()
         .setTitle(`Arrêt`)
         .setColor(`${blue}`)
-        .setDescription(`:white_check_mark: Vous avez arrété la musique`)
+        .setDescription(`Vous avez arrété la musique!`)
     message.channel.send(embed);
 
 
