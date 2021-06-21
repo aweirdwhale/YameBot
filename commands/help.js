@@ -20,8 +20,12 @@ module.exports ={
         **clear** : *clear 'nombre entre 0 et 64'* \n
         **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n
         __**Médias:**__
-        **play**: *play 'lien youtube'*
-        **SOON** :smirk: \n
+        **play**: *play 'lien youtube | nom de la musique'*
+        **stopper la musique**: *stop*
+        **passer la musique**: *skip*
+        **lire en boucle**: *loop*
+        
+        -merci Tidic :kissing_smiling_eyes:-
         **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n
         __**APIs**__
         **ISS**: *help iss pour plus de précisions.*
