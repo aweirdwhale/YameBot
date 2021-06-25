@@ -1,12 +1,13 @@
 const Discord = require('discord.js');
 let emojis = require('emojis');
+const { MessageButton, default: discordButtons } = require('discord-buttons');
 
 module.exports ={
     name: 'help',
     description: "show help",
     execute(client, message, args) {
 
-        if(!args[0]) return message.channel.send(new Discord.MessageEmbed()
+        const help = new Discord.MessageEmbed()
         .setTitle("Aide")
         .setAuthor("Yameteam", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
       
@@ -46,10 +47,9 @@ module.exports ={
         .setFooter("prefix: 'y!'", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
         .setThumbnail("https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
       
-        .setURL("https://discord.gg/sRn9yzCbbx"))
+        .setURL("https://discord.gg/sRn9yzCbbx")
 
-
-        if(args[0] == "iss") return message.channel.send(new Discord.MessageEmbed()
+        const iss = new Discord.MessageEmbed()
         .setTitle("Aide Iss")
         .setAuthor("Yameteam", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
       
@@ -64,25 +64,63 @@ module.exports ={
         .setFooter("prefix: 'y!'", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
         .setThumbnail("https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
       
-        .setURL("https://discord.gg/sRn9yzCbbx"))
+        .setURL("https://discord.gg/sRn9yzCbbx")
 
+        const ISS = new MessageButton()
+        .setStyle("green")
+        .setLabel('ISS')
+        .setID("ISS")
 
-        if(args[0] == "dump") return message.channel.send(new Discord.MessageEmbed()
-        .setTitle("Aide Iss")
-        .setAuthor("Yameteam", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
-      
-        .setColor(12745742)
-        .setDescription(emojis.unicode(`
-        **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n
-        "tronald dump" est une api innutile pour connaître
-        les pires conneries qu'a dit Trump...
-        la commande c'est **trump**
-        ***__SOON__***\n
-        **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n`))
-        .setFooter("prefix: 'y!'", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
-        .setThumbnail("https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
-      
-        .setURL("https://discord.gg/sRn9yzCbbx"))
+        const TRUMP = new MessageButton()
+        .setStyle("green")
+        .setLabel('TRUMP')
+        .setID("TRUMP")
+
+        message.channel.send({
+            buttons: [ISS, TRUMP],
+            embed: help
+        })
+
+        client.on('clickButton', async(button) => {
+            if(button.id === 'TRUMP'){
+                button.defer()
+                message.channel.send(new Discord.MessageEmbed()
+                .setTitle("Aide Tronald Dump API")
+                .setAuthor("Yameteam", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
+              
+                .setColor(12745742)
+                .setDescription(emojis.unicode(`
+                **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n
+                "tronald dump" est une api innutile pour connaître
+                les pires conneries qu'a dit Trump...
+                la commande c'est **trump**
+                ***__SOON__***\n
+                **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n`))
+                .setFooter("prefix: 'y!'", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
+                .setThumbnail("https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
+              
+                .setURL("https://discord.gg/sRn9yzCbbx"))
+            }
+            if(button.id === 'ISS'){
+                button.defer()
+                message.channel.send(new Discord.MessageEmbed()
+                .setTitle("Aide Iss")
+                .setAuthor("Yameteam", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
+              
+                .setColor(12745742)
+                .setDescription(emojis.unicode(`
+                **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n
+                "ISS" est une api qui permet de connaître la position
+                exacte de la station spaciale en temps réel!
+                ...c'est complètement innutile...
+                mais la commande c'est **isspos** ou **iss**!\n
+                **▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬**\n`))
+                .setFooter("prefix: 'y!'", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
+                .setThumbnail("https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
+              
+                .setURL("https://discord.gg/sRn9yzCbbx"))
+            }
+        })
 
     }
 }

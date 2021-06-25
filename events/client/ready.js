@@ -1,3 +1,4 @@
 module.exports = () => {
-    console.log(`Connected to YameBot`)
+    console.log(`Loading....`)
+    console.log(`Connected`)
 }
