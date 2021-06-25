@@ -5,6 +5,7 @@ const ytSearch = require('yt-search');
 const message = require('../events/guild/message');
 const queue = new Map();
 var loop = false;
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 var msgE;
 
 var list = [];
@@ -16,6 +17,18 @@ module.exports = {
 
     
     async execute(client, message, args, cmd) {
+
+        const step0 = "[]"
+        const step = [
+            "[▨]",
+            "[▨▨]",
+            "[▨▨▨]",
+            "[▨▨▨▨]",
+            "[▨▨▨▨▨]"
+        ]
+
+        let i = 0;
+
 
         const embedSend = new MessageEmbed()
                     .setTitle(`Recherche`)
@@ -57,16 +70,29 @@ module.exports = {
                     const song_info = await ytdl.getInfo(args[0]);
                     song = { title: song_info.videoDetails.title, url: song_info.videoDetails.video_url, videoID: song_info.videoDetails.videoId}
 
-                })
+                }).catch(error =>{
+                    console.log(error)
 
-                embed = new MessageEmbed()
-                    .setAuthor(`Chargement`)
-                    .setTitle(`${song.title}`)
-                    .setURL(`${song.url}`)
-                    .setColor(`${yellow}`)
-                    .setDescription(`Chargement de la vidéo...`)
-                    .setThumbnail(`https://img.youtube.com/vi/${song.videoID}/maxresdefault.jpg`)
-                msgE.edit(embed);
+                })
+//TODO loading
+
+    const embed = new MessageEmbed()
+    .setAuthor('Chargement')
+            .setTitle(`${song.title}`)
+            .setDescription('[]')
+            .setColor(`${blue}`)
+        msg = await message.channel.send(embed);
+
+        for(i = 0; i< step.length; i++){
+            const embed2 = new MessageEmbed()
+                .setDescription('Chargement' + step[i])
+                .setURL(`${song.url}`)
+                .setColor(`${yellow}`)
+                .setThumbnail(`https://img.youtube.com/vi/${song.videoID}/maxresdefault.jpg`)
+            await delay(100)
+            msg.edit(embed2);
+        }  
+            msgE.edit(embed);
                 
                 const connection = await message.member.voice.channel.join();
 
@@ -84,12 +110,21 @@ module.exports = {
                 if(video){
                     song = {title: video.title, url:video.url, videoID: video.videoId}
                     const embed = new MessageEmbed()
-                        .setAuthor(`Chargement`)
-                        .setTitle(`${song.title}`)
+                    .setAuthor('Chargement')
+                    .setTitle(`${song.title}`)
+                    .setDescription('[]')
+                    .setColor(`${blue}`)
+                msg = await message.channel.send(embed);
+        
+                for(i = 0; i< step.length; i++){
+                    const embed2 = new MessageEmbed()
+                        .setDescription('Chargement' + step[i])
                         .setURL(`${song.url}`)
                         .setColor(`${yellow}`)
-                        .setDescription(`Chargement de la vidéo....`)
                         .setThumbnail(`https://img.youtube.com/vi/${song.videoID}/maxresdefault.jpg`)
+                    await delay(100)
+                    msg.edit(embed2);
+                }
                         msgE.edit(embed);
                 } else {
                     const embed = new MessageEmbed(receivedEmbed)

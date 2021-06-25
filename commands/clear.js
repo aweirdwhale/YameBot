@@ -1,5 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const PURPULE = require('./colors.json')
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 module.exports = {
     name: 'clear',
@@ -16,9 +17,16 @@ module.exports = {
         } 
 
         message.channel.bulkDelete(ammount + 1)
-        .then(messages => message.channel.send(new MessageEmbed()
-        .setTitle(`${messages.size - 1} message supprimé(s)`)
-        .setColor(10181046)
-        .setImage(``)));
+        .then(async messages => {         
+            const embed = new MessageEmbed()
+                .setTitle(`${messages.size -1} messages ont été supprimés.`)
+                .setColor(`RANDOM`)
+            embedSent = await message.channel.send(embed);
+
+            await delay(3000) 
+
+            embedSent.delete();
+        });
+
     }
 };

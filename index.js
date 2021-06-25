@@ -13,9 +13,9 @@ client.events = new Discord.Collection();
 })
 
 client.once('ready', () => {
-    client.user.setActivity(emojis.unicode('des hentais :eyes:'), { type: 'WATCHING', url:  'https://twitch.tv/'})
+    client.user.setActivity(emojis.unicode(`le boule de l'impératrice :eyes:`), { type: 'WATCHING', url:  'https://twitch.tv/leculdeflo'})
 })
 
 //client.user.setActivity(emojis.unicode('des hentais :eyes:'), { type: 'WATCHING', url:  'https://twitch.tv/'})
 
-client.login(token);
+client.login(process.env.TOKEN);
