@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client()
 const iss = require ('./commands/help.js')
 
+
+const { token } = require('./snapshot-token.json')
 let emojis = require('emojis');
 
 client.commands = new Discord.Collection();
@@ -21,4 +23,4 @@ client.once('ready', () => {
 
 //client.user.setActivity(emojis.unicode('des hentais :eyes:'), { type: 'WATCHING', url:  'https://twitch.tv/'})
 
-client.login(process.env.TOKEN);
+client.login(token);
