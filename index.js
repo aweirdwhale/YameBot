@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client()
 
-const { token } = require('./snapshot-token.json')
 let emojis = require('emojis');
 
 client.commands = new Discord.Collection();
