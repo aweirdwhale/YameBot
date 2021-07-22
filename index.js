@@ -61,4 +61,4 @@ client.once('ready', () => {
 
 //client.user.setActivity(emojis.unicode('des hentais :eyes:'), { type: 'WATCHING', url:  'https://twitch.tv/'})
 
-client.login(token);
+client.login(process.env.TOKEN);
