@@ -315,4 +315,6 @@ const loop_song = (message) => {
             .setDescription(`:white_check_mark: Vous avez désactivé la boucle`)
         message.channel.send(embed);
     }
+
+    console.log('Médias chargés')
 }

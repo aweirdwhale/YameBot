@@ -39,5 +39,6 @@ module.exports = {
                 .setDescription(`Says GoodBye to ${member.user.tag}!`)
         message.channel.send(embed);
         
+        console.log('Kick chargé')
     }
 };

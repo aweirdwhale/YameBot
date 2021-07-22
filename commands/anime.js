@@ -47,5 +47,8 @@ module.exports = {
 
         });
     });  
+
+    console.log('Animes chargés')
     }
+    
 };

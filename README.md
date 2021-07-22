@@ -1,4 +1,5 @@
 --YameBot--
+!!  RELEASE 1  !!
 a fucking useless discord bot
 
 CHANGELOG V1.1.2:

@@ -5,7 +5,7 @@ const { MessageButton, default: discordButtons } = require('discord-buttons');
 module.exports ={
     name: 'help',
     description: "show help",
-    execute(client, message, args) {
+    async execute(client, message, args) {
 
         const help = new Discord.MessageEmbed()
         .setTitle("Aide")
@@ -49,6 +49,7 @@ module.exports ={
       
         .setURL("https://discord.gg/sRn9yzCbbx")
 
+        
         const iss = new Discord.MessageEmbed()
         .setTitle("Aide Iss")
         .setAuthor("Yameteam", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
@@ -76,7 +77,7 @@ module.exports ={
         .setLabel('TRUMP')
         .setID("TRUMP")
 
-        message.channel.send({
+        const msg = await message.channel.send({
             buttons: [ISS, TRUMP],
             embed: help
         })
@@ -84,7 +85,7 @@ module.exports ={
         client.on('clickButton', async(button) => {
             if(button.id === 'TRUMP'){
                 button.defer()
-                message.channel.send(new Discord.MessageEmbed()
+                const trump = new Discord.MessageEmbed()
                 .setTitle("Aide Tronald Dump API")
                 .setAuthor("Yameteam", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
               
@@ -99,11 +100,13 @@ module.exports ={
                 .setFooter("prefix: 'y!'", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
                 .setThumbnail("https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
               
-                .setURL("https://discord.gg/sRn9yzCbbx"))
+                .setURL("https://discord.gg/sRn9yzCbbx")
+
+                msg.edit({embed: trump});
             }
             if(button.id === 'ISS'){
                 button.defer()
-                message.channel.send(new Discord.MessageEmbed()
+                const iss = new Discord.MessageEmbed()
                 .setTitle("Aide Iss")
                 .setAuthor("Yameteam", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
               
@@ -118,9 +121,12 @@ module.exports ={
                 .setFooter("prefix: 'y!'", "https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
                 .setThumbnail("https://cdn.discordapp.com/avatars/810932378850689035/4e990f8b5a0e1775eb7aeba9c40bbd98.png?size=256")
               
-                .setURL("https://discord.gg/sRn9yzCbbx"))
+                .setURL("https://discord.gg/sRn9yzCbbx")
+
+                msg.edit({embed: iss});
             }
         })
 
+        console.log('Aide chargée')
     }
 }
