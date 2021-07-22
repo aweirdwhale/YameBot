@@ -20,5 +20,5 @@ module.exports = {
 
         message.channel.send(embed);
 
-
+        console.log('ISS chargée')
 }}

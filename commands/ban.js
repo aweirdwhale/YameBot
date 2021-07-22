@@ -38,6 +38,7 @@ module.exports = {
                 .setColor(`#800080`)
                 .setDescription(`Sa·Yo·Na·Ra ${member.user.tag}!`)
         message.channel.send(embed);
-        
+     
+        console.log('Ban chargé')
     }
 };

@@ -50,6 +50,6 @@ module.exports = {
         const step7 = "[▨▨▨▨▨▨▨▨..]"
         const step8 = "[▨▨▨▨▨▨▨▨▨]"
         const step9 = "[▨▨▨▨▨▨▨▨▨▨]"*/
-        
+        console.log('Progressbar chargée')
     }
 };

@@ -77,5 +77,7 @@ module.exports = {
             //                     }
         
 
+            console.log('Hentais chargés')
     }
+
 };

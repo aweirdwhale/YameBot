@@ -1,3 +1,11 @@
 {
-    "prefix": "y!"
+    "prefix": "y!",
+    "servers": [
+        "861198821895176233"
+    ],
+    "RoleName": "861198821895176233",
+    "colors": 5,
+    "speed": 100,
+    "logging": true
+
 }
