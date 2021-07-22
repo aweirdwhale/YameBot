@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client()
 const iss = require ('./commands/help.js')
 
-const { token } = require('./config.json')
 let emojis = require('emojis');
 
 client.commands = new Discord.Collection();
