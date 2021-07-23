@@ -11,3 +11,6 @@
 - [x] Utilisations d'APIs avec les commandes *anime*, *iss* et *hentai*
 - [x] Lecture de médias youtube
 - [x] Gestions d'images dynamiques avec la commande *pp*
+
+
+> *pour installer le bot allez sur le lien du titre ou [ici](https://discord.com/oauth2/authorize?client_id=837671311371010048&scope=bot&permissions=8)*
