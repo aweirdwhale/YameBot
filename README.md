@@ -5,7 +5,7 @@
 *a fucking useless discord bot*
 
 > merci à tous ceux qui ont installé ce bot!!
-> (actuellement 3serv de test et 1 random)
+> (actuellement 2serv de test et 1 random)
 
 - [x] Index optimisé
 - [x] Utilisations d'APIs avec les commandes *anime*, *iss* et *hentai*
