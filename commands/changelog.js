@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: 'changelog',
-    aliases: ['userversion'],
+    aliases: ['userversion', 'release'],
     description: "show iss position",
 
     async execute(client, message, args, cmd) {
