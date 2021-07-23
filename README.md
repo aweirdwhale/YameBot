@@ -1,18 +1,13 @@
---YameBot--
-!!  RELEASE 1  !!
-a fucking useless discord bot
+![RELEASE](https://media.discordapp.net/attachments/657940718186266645/867785380350525460/releasetestimg2.png?width=1248&height=702)
 
-CHANGELOG V1.1.2:
-optimisation du index.js 
-pp 
-clear 
-help avec arguments
-lecture de médias
-ban
-kick
-ajout d'apis:
-iss 
-translate
-pronote
-marmiton
-tronald dump
+# [ --YameBot-- ](https://discord.com/oauth2/authorize?client_id=837671311371010048&scope=bot&permissions=8)
+**RELEASE 1**
+*a fucking useless discord bot*
+
+> merci à tous ceux qui ont installé ce bot!!
+> (actuellement 3serv de test et 1 random)
+
+- [x] Index optimisé
+- [x] Utilisations d'APIs avec les commandes *anime*, *iss* et *hentai*
+- [x] Lecture de médias youtube
+- [x] Gestions d'images dynamiques avec la commande *pp*
