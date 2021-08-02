@@ -1,5 +1,6 @@
 --YameBot--
 a fucking useless discord bot
+----Based on Discord.js Lib---
 
 CHANGELOG V1.1.2:
 optimisation du index.js 
