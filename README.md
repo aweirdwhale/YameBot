@@ -2,7 +2,8 @@
 
 # [ --YameBot-- ](https://discord.com/oauth2/authorize?client_id=837671311371010048&scope=bot&permissions=8)
 **RELEASE 1**
-*a fucking useless discord bot*
+*A fucking useless discord bot*
+**Based on Discord.js lib.**
 
 > merci à tous ceux qui ont installé ce bot!!
 > (actuellement 2serv de test et 1 random)
