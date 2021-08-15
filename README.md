@@ -1,4 +1,4 @@
-  ![imgur](https://toppng.com/uploads/preview/discord-png-logo-blue-discord-logo-11562952349iwzz2zzubv.png)
+  ![imgur](https://img.over-blog-kiwi.com/3/01/32/11/20190122/ob_1de505_dabbingdiscord.png)
   
   ## YameTeam -- YameBot
 
