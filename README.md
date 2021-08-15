@@ -1,4 +1,4 @@
-  ![imgur](https://imgur.com/a/pnfs7Mm.png)
+  ![imgur](https://imgur.com/a/pnfs7Mm)
   
   ## YameTeam -- YameBot
 
